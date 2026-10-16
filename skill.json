@@ -1,0 +1,33 @@
+{
+  "name": "genpark-rokt-transaction-moment-post-purchase-offer-arbiter-skill",
+  "version": "1.0.0",
+  "description": "Rokt-inspired Transaction Moment & Post-Purchase Retail Media Offer Arbiter. Leverages contextual multi-armed bandit sampling, customer brand affinity filtering, and eCPM yield arbitrage to serve the highest-converting third-party and native offers at checkout and thank-you pages.",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.llinkedin.com/company/92955550",
+  "tools": [
+    {
+      "name": "arbitrate_offers",
+      "description": "Arbitrate post-purchase transaction moment offers based on eCPM yield and customer affinity.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "transaction_context": {
+            "type": "object",
+            "description": "Order value, purchased category, payment method, and customer loyalty tier."
+          },
+          "candidate_offers": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "description": "Ad offers with advertiser_id, cpa_bid, historical_ctr, historical_cvr, and restrictions."
+          }
+        },
+        "required": [
+          "transaction_context",
+          "candidate_offers"
+        ]
+      }
+    }
+  ]
+}
